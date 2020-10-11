@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="31f652e4-3506-4f68-8f9e-2e680a826fde" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="ProjectId" id="1igWX4j4hNhjPx4CiVTzwNFTEiB" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../WK/wkat-cie" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\dev\github\snoweb\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31f652e4-3506-4f68-8f9e-2e680a826fde" name="Default Changelist" comment="" />
+      <created>1602329752856</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602329752856</updated>
+      <workItem from="1602329754853" duration="2050000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initialize repo">
+      <created>1602439843525</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602439843525</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initialize repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initialize repo" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1602439842988">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602439842988" />
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1602439362452">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1602439362452" />
+    <state x="306" y="195" key="FileDocumentManager.FileCacheConflict" timestamp="1602439557277">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="306" y="195" key="FileDocumentManager.FileCacheConflict/0.0.1920.1050@0.0.1920.1050" timestamp="1602439557277" />
+    <state width="1899" height="277" key="GridCell.Tab.0.bottom" timestamp="1602439613857">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1602439613857" />
+    <state width="1899" height="277" key="GridCell.Tab.0.center" timestamp="1602439613857">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="277" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1602439613857" />
+    <state width="1899" height="277" key="GridCell.Tab.0.left" timestamp="1602439613857">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="277" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1602439613857" />
+    <state width="1899" height="277" key="GridCell.Tab.0.right" timestamp="1602439613857">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="277" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1602439613857" />
+    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602439111778">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602439111778" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1602439475599">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1602439475599" />
+  </component>
+</project>

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "baseUrl": ".",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "outDir": "dist",
+    "declaration": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "removeComments": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "include": ["./src/index.ts"]
+}
