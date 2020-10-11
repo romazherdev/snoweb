@@ -12,7 +12,8 @@
     "strict": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "removeComments": true
+    "removeComments": true,
+    "sourceMap": true
   },
   "exclude": [
     "node_modules",
