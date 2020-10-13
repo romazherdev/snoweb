@@ -1,24 +1,43 @@
-import { Vector2D } from './vector2D';
+import { Destroyable } from '../models';
+import { SNOWFLAKE_SVG } from '../consts/snowflake-svg';
 
-export class Snowflake {
-  private currentPosition: Vector2D;
-
-  get vector2D(): Vector2D {
-    return this.currentPosition;
-  }
+export class Snowflake extends HTMLElement implements Destroyable {
+  static SELECTOR = 'snoweb-snowflake';
 
   constructor(
-      private readonly size: number,
-      private readonly initialPosition: Vector2D,
+      private readonly size: number = 1,
+      private readonly startX: number = 0,
+      private readonly startY: number = 0,
   ) {
-    this.currentPosition = new Vector2D(initialPosition.x, initialPosition.y);
+    super();
+
+    this.innerHTML = SNOWFLAKE_SVG;
+    this.style.setProperty('transform', `scale(${this.size})`);
+    this.style.setProperty('left', `${startX}px`);
+    this.style.setProperty('top', `${startY}px`);
   }
 
-  moveBy(vector: Vector2D): void {
-    this.currentPosition.moveBy(vector);
+  fall(gravity: number): void {
+    const currentTop = Number(this.style.getPropertyValue('top').replace('px', ''));
+    const newTop = currentTop + gravity * this.size;
+
+    if (newTop < window.innerHeight) {
+      this.style.setProperty('top', `${newTop}px`);
+    } else {
+      this.reset();
+    }
   }
 
   reset(): void {
-    this.currentPosition = new Vector2D(this.initialPosition.x, this.initialPosition.y);
+    this.style.setProperty('left', `${this.startX}px`);
+    this.style.setProperty('top', `${this.startY}px`);
+  }
+
+  destroy(): void {
+    if (this.parentElement) {
+      this.parentElement.removeChild(this);
+    }
   }
 }
+
+customElements.define(Snowflake.SELECTOR, Snowflake);
