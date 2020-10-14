@@ -7,4 +7,7 @@ export interface SnowebConfig {
 
   /** CSS color of the snowflakes */
   snowflakesColor: string;
+
+  /** Snowfall z-index */
+  zIndex: number;
 }

@@ -22,7 +22,7 @@ export class Snoweb implements Destroyable {
     this.config = { ...DEFAULT_SNOWEB_CONFIG, ...config };
   }
 
-  /** Begin the snowfall. Ho-ho-ho 🎅 */
+  /** Begins the snowfall. Ho-ho-ho 🎅 */
   start(): void {
     if (this.isStarted()) {
       return;
@@ -40,7 +40,11 @@ export class Snoweb implements Destroyable {
     }
   }
 
-  /** Stop the snowfall */
+  /**
+   * Stops the snowfall
+   * @param afterStopCallback - a callback function which is called after the snowfall is fully stopped (all the
+   * snowflakes have fallen).
+   */
   stop(afterStopCallback?: () => void): void {
     if (this.isStarted()) {
       this.started = false;
@@ -50,7 +54,7 @@ export class Snoweb implements Destroyable {
     }
   }
 
-  /** Destroy the snowfall immediately */
+  /** Stops the snowfall immediately and destroys the DOM element */
   destroy(): void {
     if (this.domContainerElement?.parentElement) {
       this.domContainerElement.parentElement.removeChild(this.domContainerElement);
@@ -60,6 +64,7 @@ export class Snoweb implements Destroyable {
     }
   }
 
+  /** Shows whether the snowfall is being started */
   isStarted(): boolean {
     return this.started;
   }
@@ -87,6 +92,7 @@ export class Snoweb implements Destroyable {
     if (!this.domContainerElement) {
       this.domContainerElement = document.createElement('div');
       this.domContainerElement.classList.add(Snoweb.CLASS_NAME);
+      this.domContainerElement.style.setProperty('z-index', String(this.config.zIndex));
       document.body.appendChild(this.domContainerElement);
     }
   }
