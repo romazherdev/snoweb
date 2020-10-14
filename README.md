@@ -68,3 +68,6 @@ snoweb.stop(() => snoweb.destroy());
 | gravity: number         | The higher the value the faster the snowflakes will fall                                       | 10            |
 | snowflakesColor: string | CSS color of the snowflakes                                                                    | '#fff'        |
 | zIndex: number          | Snowfall z-index                                                                               | 1000000       |
+
+## Check it out on Stackblitz
+https://stackblitz.com/edit/snoweb?file=index.js
