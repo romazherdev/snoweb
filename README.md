@@ -25,6 +25,7 @@ snoweb.start();
 ```
 
 ### Step 3: Enjoy
+![snowfall](https://user-images.githubusercontent.com/15265894/96039109-d3f35e00-0e70-11eb-9a99-cca027c0257d.gif)
 
 ## Tips
 ### Tip 1: Configure your snowfall
@@ -49,9 +50,7 @@ snoweb.start();
 // The snowfall is being smoothly stopped and after all the snowflakes have fallen the provided callback function is
 executed which calls destroy() method
 snoweb.stop(() => snoweb.destroy());
-```
-
-![snowfall](https://user-images.githubusercontent.com/15265894/96039109-d3f35e00-0e70-11eb-9a99-cca027c0257d.gif) 
+``` 
 
 ## API
 ### Snoweb
