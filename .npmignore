@@ -1,3 +1,12 @@
 /demo
 /.github
 /coverage
+/src
+/.editorconfig
+/.gitignore
+/README.md
+/tsconfig.json
+/tslint.json
+/webpack.common.js
+/webpack.config.js
+/webpack.prod.js

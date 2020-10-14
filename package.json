@@ -4,6 +4,14 @@
   "description": "Falling snowflakes for your website and christmas mood ❄️",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "keywords": [
+    "snow",
+    "snowfall",
+    "snowflakes",
+    "christmas",
+    "new year",
+    "winter"
+  ],
   "scripts": {
     "start": "webpack serve",
     "build": "webpack --config webpack.prod.js",
