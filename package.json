@@ -9,7 +9,8 @@
     "build": "webpack --config webpack.prod.js",
     "test": "npx jest",
     "test:cov": "npx jest --coverage",
-    "lint": "tslint -c tslint.json 'src/**/*.ts'"
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "prepublish": "npm run build"
   },
   "author": "romazherdev@gmail.com",
   "license": "ISC",
