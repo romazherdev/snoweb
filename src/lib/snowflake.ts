@@ -8,35 +8,55 @@ export class Snowflake extends HTMLElement implements Destroyable {
       private readonly size: number = 1,
       private readonly startX: number = 0,
       private readonly startY: number = 0,
+      private readonly color: string,
   ) {
     super();
 
-    this.innerHTML = SNOWFLAKE_SVG;
-    this.style.setProperty('transform', `scale(${this.size})`);
-    this.style.setProperty('left', `${startX}px`);
-    this.style.setProperty('top', `${startY}px`);
+    this.innerHTML = SNOWFLAKE_SVG.replace('{color}', color);
+    this.setScale(size);
+    this.setLeft(startX);
+    this.setTop(startY);
   }
 
   fall(gravity: number): void {
-    const currentTop = Number(this.style.getPropertyValue('top').replace('px', ''));
-    const newTop = currentTop + gravity * this.size;
-
-    if (newTop < window.innerHeight) {
-      this.style.setProperty('top', `${newTop}px`);
-    } else {
-      this.reset();
+    if (!this.isFell()) {
+      this.setTop(this.getTop() + gravity * this.size);
     }
   }
 
-  reset(): void {
-    this.style.setProperty('left', `${this.startX}px`);
-    this.style.setProperty('top', `${this.startY}px`);
+  resetToInitialPosition(): void {
+    this.setLeft(this.startX);
+    this.setTop(this.startY);
   }
 
   destroy(): void {
     if (this.parentElement) {
       this.parentElement.removeChild(this);
     }
+  }
+
+  getLeft(): number {
+    return Number(this.style.getPropertyValue('left').replace('px', ''));
+  }
+
+  getTop(): number {
+    return Number(this.style.getPropertyValue('top').replace('px', ''));
+  }
+
+  isFell(): boolean {
+    return this.getTop() > window.innerHeight;
+  }
+
+  private setLeft(val: number): void {
+    this.style.setProperty('left', `${val}px`);
+  }
+
+  private setTop(val: number): void {
+    this.style.setProperty('top', `${val}px`);
+  }
+
+  private setScale(scale: number): void {
+    this.style.setProperty('transform', `scale(${scale})`);
   }
 }
 

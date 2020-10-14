@@ -3,6 +3,9 @@
   "extends": [
     "tslint:recommended"
   ],
+  "rules": {
+    "no-console": [true, "log"]
+  },
   "jsRules": {},
   "rulesDirectory": []
 }

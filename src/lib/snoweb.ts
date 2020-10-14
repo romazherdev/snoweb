@@ -7,9 +7,16 @@ export class Snoweb implements Destroyable {
 
   private readonly config: SnowebConfig;
 
-  private domElement!: HTMLElement;
+  private domContainerElement!: HTMLElement | null;
   private snowflakes: Snowflake[] = [];
   private started: boolean = false;
+
+  // this callback function (if exists) is being called after all the snowflakes have fallen
+  private afterStopCallback?: () => void;
+
+  // this needs to determine whether the render() is being called via requestAnimationFrame() or not
+  // in order to not call render() twice on each frame
+  private isFrameRequested: boolean = false;
 
   constructor(config?: Partial<SnowebConfig>) {
     this.config = { ...DEFAULT_SNOWEB_CONFIG, ...config };
@@ -17,54 +24,84 @@ export class Snoweb implements Destroyable {
 
   /** Begin the snowfall. Ho-ho-ho 🎅 */
   start(): void {
-    if (!this.started) {
-      this.started = true;
+    if (this.isStarted()) {
+      return;
+    }
+
+    this.started = true;
+
+    if (!this.domContainerElement) {
       this.createDOMElement();
       this.createSnowflakes();
+    }
+
+    if (!this.isFrameRequested) {
       this.render();
     }
   }
 
   /** Stop the snowfall */
-  stop(): void {
-    throw new Error('Method not implemented');
+  stop(afterStopCallback?: () => void): void {
+    if (this.isStarted()) {
+      this.started = false;
+      this.afterStopCallback = afterStopCallback;
+    } else {
+      console.warn('The snowfall is already being stopped.');
+    }
   }
 
   /** Destroy the snowfall immediately */
   destroy(): void {
-    if (this.domElement?.parentElement) {
-      this.domElement.parentElement.removeChild(this.domElement);
+    if (this.domContainerElement?.parentElement) {
+      this.domContainerElement.parentElement.removeChild(this.domContainerElement);
+      this.domContainerElement = null;
+    } else {
+      console.warn('Snoweb element either already destroyed or was not created at all.')
     }
   }
 
-  render(): void {
-    this.snowflakes.forEach(s => {
-      s.fall(this.config.gravity);
+  isStarted(): boolean {
+    return this.started;
+  }
+
+  // this creates falling animation
+  private render(): void {
+    let isEverySnowflakeFellDown: boolean = true;
+
+    this.snowflakes.forEach(snowflake => {
+      snowflake.fall(this.config.gravity);
+
+      if (snowflake.isFell() && this.isStarted()) {
+        snowflake.resetToInitialPosition();
+      }
+
+      isEverySnowflakeFellDown = isEverySnowflakeFellDown && snowflake.isFell();
     });
 
-    if (this.started) {
-      requestAnimationFrame(this.render.bind(this));
-    }
+    this.isFrameRequested = !isEverySnowflakeFellDown;
+    isEverySnowflakeFellDown ? this.afterStopCallback?.() : requestAnimationFrame(this.render.bind(this));
   }
 
+  // creates container for snowflakes
   private createDOMElement(): void {
-    if (!this.domElement) {
-      this.domElement = document.createElement('div');
-      this.domElement.classList.add(Snoweb.CLASS_NAME);
-      document.body.appendChild(this.domElement);
+    if (!this.domContainerElement) {
+      this.domContainerElement = document.createElement('div');
+      this.domContainerElement.classList.add(Snoweb.CLASS_NAME);
+      document.body.appendChild(this.domContainerElement);
     }
   }
 
+  // creates snowflakes inside the domContainerElement
   private createSnowflakes(): void {
     this.destroyAllSnowflakes();
 
-    if (this.domElement) {
+    if (this.domContainerElement) {
       for (let i = 0; i < this.config.snowflakesCount; i++) {
         const size = Math.random() * (0.5 - 0.25) + 0.25;
         const startX = Math.random() * window.innerWidth
         const startY = -(Math.random() * (window.innerHeight - 25) + 25)
-        const sf = new Snowflake(size, startX, startY);
-        this.domElement.appendChild(sf);
+        const sf = new Snowflake(size, startX, startY, this.config.snowflakesColor);
+        this.domContainerElement.appendChild(sf);
         this.snowflakes.push(sf);
       }
     }
