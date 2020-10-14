@@ -47,8 +47,6 @@ If you want to stop and fully destroy it you can do the following:
 const snoweb = new Snoweb();
 snoweb.start();
 // ...
-// The snowfall is being smoothly stopped and after all the snowflakes have fallen the provided callback function is
-executed which calls destroy() method
 snoweb.stop(() => snoweb.destroy());
 ``` 
 
