@@ -2,7 +2,7 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
-  entry: './src/index.ts',
+  entry: './index.ts',
   mode: 'production',
   optimization: {
     usedExports: true,

@@ -1,4 +1,4 @@
-import { Snoweb } from '../src';
+import { Snoweb } from '../index';
 
 /* This file is used for development purpose and won't be included in the build */
 const snow = new Snoweb();

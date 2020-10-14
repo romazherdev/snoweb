@@ -1,6 +1,6 @@
 {
   "name": "snoweb",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Falling snowflakes for your website and christmas mood ❄️",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
