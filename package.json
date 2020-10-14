@@ -1,9 +1,12 @@
 {
   "name": "snoweb",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Falling snowflakes for your website and christmas mood ❄️",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "snow",
     "snowfall",

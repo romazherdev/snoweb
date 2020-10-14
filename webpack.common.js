@@ -18,7 +18,11 @@ module.exports = {
     extensions: ['.ts', '.js'],
   },
   output: {
-    filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
+    library: 'Snoweb',
+    libraryTarget: 'umd',
+    globalObject: 'this',
+    umdNamedDefine: true,
   },
 };
