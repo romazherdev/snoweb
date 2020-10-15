@@ -1,3 +1,8 @@
+export * from './lib/snoweb';
+export * from './models/snoweb-config';
+
+const style = document.createElement('style');
+style.innerHTML = `
 .snoweb-container {
   position: fixed;
   top: 0;
@@ -13,3 +18,5 @@
 .snoweb-container > * {
   position: absolute;
 }
+`;
+document.body.appendChild(style);

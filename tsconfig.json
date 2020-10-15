@@ -1,24 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "moduleResolution": "node",
     "baseUrl": ".",
+    "rootDir": "src",
+    "outDir": "dist",
+    "sourceMap": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2015",
+    "module": "UMD",
     "lib": [
       "es2015",
       "dom"
-    ],
-    "outDir": "dist",
-    "declaration": true,
-    "strict": true,
-    "esModuleInterop": true,
-    "noImplicitAny": true,
-    "removeComments": true,
-    "sourceMap": true,
-    "importHelpers": true
+    ]
   },
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "demo"
+  ],
+  "include": [
+    "src/**/*"
   ]
 }
